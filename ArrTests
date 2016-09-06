@@ -1,21 +1,43 @@
-public class ArrTests {
+package org.anzo;
 
+import org.hamcrest.Matcher;
+import org.junit.Before;
+import org.junit.Test;
+
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+import static org.hamcrest.CoreMatchers.both;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+
+/**
+ * Created by anzo0316 on 9/6/2016.
+ */
+public class ArrTests {
 
 
     @Test
 
-    public void ArrTest01(){
-
+    public void sumArrayTest() {
         int[] array1 = {1, 5, 7, 15};
         int[] array2 = {2, 4, 6,};
-        int [] exp = {1,2,4,5,6,7,15};
-        boolean exp2 = true;
-        int [] reuslt = SumArray.summary(array1,array2);
-        assertThat(SumArray.summary(array1,array2), is(exp));
-        assertThat(CheckArray.result(reuslt),is(exp2));
+        int[] exp = {1, 2, 4, 5, 6, 7, 15};
+        assertThat(SumArray.summary(array1, array2), is(exp));
+
+
     }
 
+    @Test
 
+    public void checkArrayTest() {
+        int[] array1 = {1, 5, 7, 15};
+        int[] array2 = {2, 4, 6,};
+        int[] reuslt = SumArray.summary(array1, array2);
+        assertThat(CheckArray.result(reuslt), is(true));
+    }
 
 
 }
