@@ -1,0 +1,21 @@
+public class ArrTests {
+
+
+
+    @Test
+
+    public void ArrTest01(){
+
+        int[] array1 = {1, 5, 7, 15};
+        int[] array2 = {2, 4, 6,};
+        int [] exp = {1,2,4,5,6,7,15};
+        boolean exp2 = true;
+        int [] reuslt = SumArray.summary(array1,array2);
+        assertThat(SumArray.summary(array1,array2), is(exp));
+        assertThat(CheckArray.result(reuslt),is(exp2));
+    }
+
+
+
+
+}
